@@ -20,7 +20,7 @@ architecture Behavioral of UART_user is
 
 component UART IS
   GENERIC(
-    clk_freq  :  INTEGER    := 125_000_000;  --frequency of system clock in Hertz
+    clk_freq  :  INTEGER    := 50000000;  --frequency of system clock in Hertz
     baud_rate :  INTEGER    := 9600;      --data link baud rate in bits/second
     os_rate   :  INTEGER    := 16;          --oversampling rate to find center of receive bits (in samples per baud period)
     d_width   :  INTEGER    := 8;           --data bus width
@@ -118,7 +118,7 @@ end process;
 -- UART component instantiation
 Inst_UART: UART
   GENERIC MAP(
-    clk_freq  => 125_000_000,  --frequency of system clock in Hertz
+    clk_freq  => 50000000,  --frequency of system clock in Hertz
     baud_rate => 9600,      --data link baud rate in bits/second
     os_rate   => 16,          --oversampling rate to find center of receive bits (in samples per baud period)
     d_width   => 8,           --data bus width
